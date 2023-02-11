@@ -51,8 +51,7 @@ class HelloWorld {
                 {
                 randomNumber = random.Next(0, availableNums.Count);
                 scripture.getScriptureText()[ availableNums[randomNumber] ].setHidden(true);
-                
-                Console.WriteLine(availableNums[randomNumber]);
+
                 availableNums.RemoveAt(randomNumber);
                 }
             }
