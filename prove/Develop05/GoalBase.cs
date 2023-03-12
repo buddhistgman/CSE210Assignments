@@ -10,10 +10,10 @@ abstract class GoalBase{
     protected string _goalName;
     protected string _goalType;
     protected string _completeMark;
-    
-    public abstract int getLoadedPoints();
+
     public abstract string getSaveGoal();
     public abstract void updateGoal();
+    public abstract bool isComplete();
     public abstract string displayGoalInfo();
     public abstract int getPoints();
     

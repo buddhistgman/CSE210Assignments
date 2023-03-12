@@ -10,6 +10,7 @@ class EternalGoal : GoalBase
     
     public EternalGoal(string goalString)
     {
+        _goalType = "EternalGoal";
         string[] splitString = goalString.Split(',');
         _goalName = splitString[0];
         _goalDescription = splitString[1];
@@ -35,9 +36,9 @@ class EternalGoal : GoalBase
     {
         return _goalPoints;
     }
-    public override int getLoadedPoints()
+    public override bool isComplete()
     {
-        return _goalPoints * _timesCompleted;
+        return false;
     }
     public override string getSaveGoal()
     {
@@ -46,7 +47,7 @@ class EternalGoal : GoalBase
     public override string displayGoalInfo()
     {
         string returnString;
-        returnString =" [" + _completeMark + "] " + _goalName + " (" + _goalDescription + ")";
+        returnString =" [ ] " + _goalName + " (" + _goalDescription + ")";
         return returnString;
     }
 }

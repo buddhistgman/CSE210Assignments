@@ -10,6 +10,7 @@ class SimpleGoal : GoalBase
     
     public SimpleGoal(string goalString)
     {
+        _goalType = "SimpleGoal";
         string[] splitString = goalString.Split(',');
         _goalName = splitString[0];
         _goalDescription = splitString[1];
@@ -53,14 +54,10 @@ class SimpleGoal : GoalBase
         }
         return points;
     }
-    public override int getLoadedPoints()
+    
+    public override bool isComplete()
     {
-        int points = 0;
-        if (_completed == true)
-        {
-            points = _goalPoints;
-        }
-        return points;
+        return _completed;
     }
     public override string displayGoalInfo()
     {
